@@ -1,20 +1,13 @@
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class LogicalTest {
-
-    @org.junit.Before
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.After
-    public void tearDown() throws Exception {
-    }
-
-    @org.junit.Test
-    public void calculate() {
-    }
-
-    @org.junit.Test
-    public void calculate1() {
+    @Test
+    public void test(){
+        Parser parser = new Parser("1 and 0");
+        Expression expression = parser.parse();
+        Logical logical = new Logical("and", expression.left, expression.right);
+        assertEquals(logical.calculate(), (long)0);
     }
 }
