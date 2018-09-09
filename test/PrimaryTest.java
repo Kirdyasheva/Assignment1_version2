@@ -9,6 +9,6 @@ public class PrimaryTest {
         Parser parser = new Parser("10");
         Expression expression = parser.parse();
         Primary primary = (Primary)expression;
-        assertEquals("integer", primary.op);
+        assertEquals("integer", primary.op.toString());
     }
 }
