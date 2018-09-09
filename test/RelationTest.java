@@ -1,20 +1,13 @@
+import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class RelationTest {
 
-    @org.junit.Before
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.After
-    public void tearDown() throws Exception {
-    }
-
-    @org.junit.Test
-    public void calculate() {
-    }
-
-    @org.junit.Test
-    public void calculate1() {
+    @Test
+    public void test(){
+        Parser parser = new Parser("5<2");
+        Expression expression = parser.parse();
+        Relation relation = new Relation ("<",expression.left, expression.right);
+        assertEquals(relation.calculate(), (long)0);
     }
 }

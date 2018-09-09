@@ -1,20 +1,17 @@
-import static org.junit.Assert.*;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class TermTest {
-
-    @org.junit.Before
-    public void setUp() throws Exception {
-    }
-
-    @org.junit.After
-    public void tearDown() throws Exception {
-    }
-
-    @org.junit.Test
-    public void calculate() {
-    }
-
-    @org.junit.Test
-    public void calculate1() {
+    @Test
+    public void test(){
+        Parser parser = new Parser("5+2");
+        Parser parser1 = new Parser("5");
+        Parser parser2 = new Parser("2");
+        Expression expression = parser.parse();
+        Expression expression1 = parser1.parse();
+        Expression expression2 = parser2.parse();
+        Term term = new Term("+", expression1, expression2);
+        assertEquals(term.calculate(), (long)7);
     }
 }
