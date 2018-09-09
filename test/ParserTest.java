@@ -9,7 +9,7 @@ public class ParserTest {
         Parser parser = new Parser("9+2");
         Expression expressionTree = parser.parse();
         assertNotNull(expressionTree);
-        assertEquals(expressionTree.left, 9);
-        assertEquals(expressionTree.right, 2);
+        assertEquals(expressionTree.left.toString(), "9");
+        assertEquals(expressionTree.right.toString(), "2");
     }
 }
