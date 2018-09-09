@@ -1,6 +1,5 @@
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class FactorTest {
 
@@ -10,6 +9,8 @@ public class FactorTest {
         Expression expression = parser.parse();
         Factor factor = new Factor("*", expression.left,  expression.right);
         System.out.print(factor.calculate());
-        assertEquals(Long.toString(factor.calculate()), "6");
+        Parser parser1 = new Parser("6");
+        Expression expression1 = parser1.parse();
+        Assert.assertEquals(factor.calculate(),(expression1.calculate()));
     }
 }
